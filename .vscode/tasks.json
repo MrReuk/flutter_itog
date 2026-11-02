@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "1 Сервер PocketBase (порт 8090)",
+      "type": "shell",
+      "command": "pocketbase\\start.bat",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "2 Приложение в Chrome (порт 5555)",
+      "type": "shell",
+      "command": "flutter run -d chrome --web-port=5555",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "3 Проверка проекта: format, analyze, test (результат в check.log)",
+      "type": "shell",
+      "command": "tools\\check.bat",
+      "problemMatcher": []
+    },
+    {
+      "label": "4 Сброс базы PocketBase к начальным данным",
+      "type": "shell",
+      "command": "pocketbase\\reset.bat",
+      "problemMatcher": []
+    },
+    {
+      "label": "5 Сборка web (build\\web)",
+      "type": "shell",
+      "command": "flutter build web --release",
+      "problemMatcher": []
+    },
+    {
+      "label": "6 Остановить процессы PocketBase",
+      "type": "shell",
+      "command": "taskkill /F /IM pocketbase.exe",
+      "problemMatcher": []
+    }
+  ]
+}
